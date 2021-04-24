@@ -140,6 +140,16 @@ nav a:hover {
   text-align: center;
 }
 
+/* přidání textu */
+.popisek {
+  width: 40vw;
+  font-size: 1.7rem;
+  font-style: italic;
+  text-align: center;
+  padding-top: 25%;
+  margin-left: 20%;
+}
+
 .drinks-list {
   display: flex;
   flex-flow: row wrap;
