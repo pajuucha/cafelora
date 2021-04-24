@@ -12,15 +12,15 @@ const ikonaElm = document.querySelector('#nav-btn');
 const polozkyNavElm = document.querySelectorAll('.navigation a');
 
 ikonaElm.addEventListener('click', () => {
-  console.log('stisknuto navigace');
+  // console.log('stisknuto navigace');
   const navElm = document.querySelector('nav');
   navElm.classList.toggle('nav-closed');
 });
 
 polozkyNavElm.forEach((element) => {
-  console.log('vypsat element', element);
+  // console.log('vypsat element', element);
   element.addEventListener('click', () => {
-    console.log('stisknuto polozky');
+    // console.log('stisknuto polozky');
     const navElm = document.querySelector('nav');
     navElm.classList.toggle('nav-closed');
   });
@@ -38,7 +38,6 @@ const drinkSelectedElm = document.querySelector('.drink__cup');
 // drinkSelectedElm.classList.toggle('drink__cup--selected');
 
 let ordered = false;
-
 orderBtnElm.addEventListener('click', (e) => {
   // console.log('drink selected');
   // console.log(drinkSelectedElm, e.target);
@@ -55,9 +54,7 @@ orderBtnElm.addEventListener('click', (e) => {
 });
 
 // 5 Ingredience jako komponenty
-
 // Každý nápoj bude obsahovat seznam ingrediencí. Na stránce vidíme příklad pro cappuccino. Budeme chtít, aby ingredience byla komponenta.
-
 // Vytvořte komponentu Layer, která očekává props v následujícím tvaru.
 // {
 //   color: '#feeeca',
@@ -70,12 +67,39 @@ orderBtnElm.addEventListener('click', (e) => {
 // Jakmile váš projekt funguje, commitněte váš kód s výborně napsanou commit zprávou a pushněte do vzdáleného repozitáře.
 
 const drinkInfoElm = document.querySelector('drink__info');
-[
-  { color: '#feeeca', label: 'mléčná pěna' },
-  { color: '#fed7b0', label: 'teplé mléko' },
-  { color: '#613916', label: 'espresso' },
-]
-  .map(Layer)
-  .forEach((layer) => {
-    drinkInfoElm.innerHtml += Layer;
-  });
+// [
+//   { color: '#feeeca', label: 'mléčná pěna' },
+//   { color: '#fed7b0', label: 'teplé mléko' },
+//   { color: '#613916', label: 'espresso' },
+// ]
+//   .map(Layer)
+//   .forEach((layer) => {
+//     drinkInfoElm.innerHtml += Layer;
+//   });
+
+// 6. Seznam ingrediencí
+// V tomto cvičení budeme chtít zařídit, abychom seznam ingrediencí dokázali zobrazit podle dat uložených v poli.
+// Uvnitř hlavního index.js si vytvořte následujicí globální proměnnou
+
+const layers = [
+  {
+    color: '#feeeca',
+    label: 'mléčná pěna',
+  },
+  {
+    color: '#fed7b0',
+    label: 'teplé mléko',
+  },
+  {
+    color: '#613916',
+    label: 'espresso',
+  },
+];
+
+// Použijte cyklus for nebo forEach, projděte seznam ingrediencí položku po položce a pomocí komponenty Layer je zobrazte každou ingredienci na stránce.
+// Jakmile je váš kód funkční, udělejte commit s profesionálně napsanou zprávou a pushněte váš kód do vzdáleného repozitáře.
+
+layers.forEach((layer) => {
+  console.log(layer);
+  drinkInfoElm.innerHTML += Layer(layer);
+});
