@@ -261,6 +261,9 @@ nav a:hover {
   .container {
     max-width: 960px;
   }
+  .nav-btn {
+    display: none;
+  }
 
   .banner {
     height: 600px;
